@@ -3,13 +3,13 @@ package POO.Momento1y2;
 public class Pedido {
     private Cliente cliente;
     private Producto[] producto;
-    private Date fecha;
+    private String fecha;
 
     // Arreglo con las 3 formas de pago disponibles
     private String[] formasPago = { "Tarjeta de crédito", "Tarjeta débito", "Efectivo" };
     private String formaPagoElegida;
 
-    public Pedido(Cliente cliente, Producto[] producto, Date fecha) {
+    public Pedido(Cliente cliente, Producto[] producto, String fecha) {
         this.cliente = cliente;
         this.producto = producto;
         this.fecha = fecha;
@@ -19,8 +19,8 @@ public class Pedido {
     public void setCliente(Cliente cliente) { this.cliente = cliente; }
     public Producto[] getProducto() { return producto; }
     public void setProducto(Producto[] producto) { this.producto = producto; }
-    public Date getFecha() { return fecha; }
-    public void setFecha(Date fecha) { this.fecha = fecha; }
+    public String getFecha() { return fecha; }
+    public void setFecha(String fecha) { this.fecha = fecha; }
     public String[] getFormasPago() { return formasPago; }
     public String getFormaPagoElegida() { return formaPagoElegida; }
 
