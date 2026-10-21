@@ -1,6 +1,6 @@
-package POO.Momento1y2;
+package Momento1y2;
 
-public class Foto {
+public class Foto  {
     private String fichero;
 
     public Foto(String fichero) {

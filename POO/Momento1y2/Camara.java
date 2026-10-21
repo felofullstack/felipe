@@ -1,4 +1,4 @@
-package POO.Momento1y2;
+package Momento1y2;
 
 public class Camara extends Producto {
     private String marca;

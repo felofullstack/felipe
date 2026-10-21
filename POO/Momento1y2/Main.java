@@ -1,28 +1,31 @@
-package POO.Momento1y2;
+package Momento1y2;
 
 public class Main {
     public static void main(String[] args) {
-        Cliente cliente = new Cliente("julio alvarez", "1005123456");
+        Cliente cliente = new Cliente("1005123456", "Juan Perez");
 
-        Foto foto = new Foto("vacaciones.jpg");
-        Impresion impresion = new Impresion("rojo", foto, 3, 5000.00);
-        Camara camara = new Camara("EOS 250D", "Canon", 2, 10000.00);
+        Foto foto1 = new Foto("vacaciones.jpg");
+        Foto foto2 = new Foto("trabajo.jpg");
+        Impresion impresion = new Impresion("rojo", foto1, 3, 5000);
+        Camara camara = new Camara("Canon", "EOS 250D", 2, 20000);
 
         Producto[] productos = { impresion, camara };
+        Pago[] pagos = new Pago[] { new Efectivo("Efectivo", 50000), new TarjetaDeCredito("Tarjeta de crédito", "1234567890123456", "12/25", "123"),
+         new Transferencia("Transferencia", "001234567890", "bancolombia") };
+    
         Pedido pedido = new Pedido(cliente, productos, "19/10/2026");
 
-        System.out.println("Formas de pago:");
-        pedido.mostrarFormasPago();
-        pedido.elegirFormaPago(2);
-
-        System.out.println();
+        
+       
+        
         System.out.println("Cliente: " + cliente.getnombre());
-        System.out.println("Fecha: " + pedido.getFecha());
-        System.out.println("Forma de pago: " + pedido.getFormaPagoElegida());
-        System.out.println();
+        System.out.println("Fecha: 19/10/2026");
+        System.out.println("Pago: " + pagos[0].getFormaPago());
 
         double total = 0;
-        for (Producto p : productos) {
+        Producto[] productosPedido = { productos[1] };
+        for (Producto p : productosPedido) {
+            // Se revisa si el producto es una Impresion o una Camara
             String tipo = "";
             if (p instanceof Impresion) {
                 tipo = "Impresion";
@@ -34,13 +37,13 @@ public class Main {
             System.out.println("Cantidad (numero): " + p.getNumero());
             System.out.println("Valor: " + p.getPrecio());
             System.out.println("Valor a pagar: " + p.getNumero() + " x " + p.getPrecio()
-                    + " = " + (p.getNumero() * p.getPrecio()));
+                    + " = " + p.getNumero() * p.getPrecio());
             System.out.println();
 
-                total += p.getNumero() * p.getPrecio();
+            total = total + p.getNumero() * p.getPrecio();
         }
 
         System.out.println("TOTAL A PAGAR: " + total);
-        System.out.println("Pago con: " + pedido.getFormaPagoElegida());
+       
     }
 }
