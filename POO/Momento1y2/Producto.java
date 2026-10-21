@@ -2,11 +2,11 @@ package POO.Momento1y2;
 
 public class Producto {
     private int numero;
-    private final double precio;
+    private final double Precio;
 
-    public Producto(int numero, double precio) {
+    public Producto(int numero, double Precio) {
         this.numero = numero;
-        this.precio = precio;
+        this.Precio = Precio;
     }
     public int getNumero() {
         return numero;
@@ -15,7 +15,7 @@ public class Producto {
         this.numero = numero;
     }
     public double getPrecio() {
-        return precio;
+        return Precio;
     }
     public void setPrecio(double precio) {
         // No se puede modificar el precio ya que es final

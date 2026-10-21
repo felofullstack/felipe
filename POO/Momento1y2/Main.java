@@ -5,11 +5,11 @@ public class Main {
         Cliente cliente = new Cliente("1005123456", "Juan Perez");
 
         Foto foto = new Foto("vacaciones.jpg");
-        Impresion impresion = new Impresion(2, 1000, "Color", foto);
-        Camara camara = new Camara(1, 1200000, "Canon", "EOS 250D");
+        Impresion impresion = new Impresion("rojo", foto, 3, 5000.00);
+        Camara camara = new Camara("EOS 250D", "Canon", 2, 10000.00);
 
         Producto[] productos = { impresion, camara };
-        Pedido pedido = new Pedido(cliente, productos[0], "19/10/2026");
+        Pedido pedido = new Pedido(cliente, productos, "19/10/2026");
 
         System.out.println("Formas de pago:");
         pedido.mostrarFormasPago();
