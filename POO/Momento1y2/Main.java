@@ -2,7 +2,7 @@ package POO.Momento1y2;
 
 public class Main {
     public static void main(String[] args) {
-        Cliente cliente = new Cliente("1005123456", "Juan Perez");
+        Cliente cliente = new Cliente("julio alvarez", "1005123456");
 
         Foto foto = new Foto("vacaciones.jpg");
         Impresion impresion = new Impresion("rojo", foto, 3, 5000.00);
